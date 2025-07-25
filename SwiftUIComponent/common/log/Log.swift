@@ -13,10 +13,16 @@ enum Tag: Int {
     // MARK: - 상위 태그
     case UI
     case API
+    case CALL
+    case FLOOR
+    case MESSAGE
+    case GROUP
+    case NOTIFY
     
     // MARK: - 하위 태그
     case ID
     case NAME
+    case URI
     
     case SUCCESS
     case FAIL
