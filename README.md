@@ -132,3 +132,29 @@
   ```
 
 <br>
+
+## Log 공통화
+> 멀티쓰레드 환경에서 Log 를 기반으로 디버깅할 때 직관적이고 작업속도가 빨랐습니다.
+> 여기서 Log 에 Tag 를 붙여 원하는 Tag 의 Log 만 필터해서 볼 수 있도록 개선했습니다.
+
+- How to use
+  ``` swift
+  Log.setLogLevel(LogLevel.DEBUG)
+  Log.tag(.CALL).t("message")
+  Log.tag(.GROUP).tag(.URI).tag(.FLOOR).e("message")
+  Log.tag([.CALL, Tag.URI]).d("message")
+  Log.tag([.MESSAGE, .NOTIFY]).tag(.URI).d("message")
+  Log.tag(.CALL).tag([.URI, .NAME]).d("message")
+  ```
+
+<br>
+
+- Result
+  ```
+  🟢 [ERROR] [FLOOR][GROUP][URI] [ContentView.swift]:22 [body]: - message
+  🟢 [DEBUG] [CALL][URI] [ContentView.swift]:23 [body]: - message
+  🟢 [DEBUG] [MESSAGE][NOTIFY][URI] [ContentView.swift]:24 [body]: - message
+  🟢 [DEBUG] [CALL][NAME][URI] [ContentView.swift]:25 [body]: - message
+  ```
+
+  ![LogFilter](SwiftUIComponent/res/image/logFilterImage.png)
