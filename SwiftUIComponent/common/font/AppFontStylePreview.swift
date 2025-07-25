@@ -11,6 +11,11 @@ struct AppFontStylePreview: View {
     var body: some View {
         ScrollView {
             VStack {
+                Text("App Font View")
+                    .fontStyle(.extraTitle)
+                    .foregroundColor(color: .textStrong)
+                    .padding()
+                
                 ForEach(AppFontStyle.allCases, id: \.self) { style in
                     Text("\(style)")
                         .fontStyle(style)

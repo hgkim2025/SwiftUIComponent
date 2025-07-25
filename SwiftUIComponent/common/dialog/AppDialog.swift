@@ -81,6 +81,11 @@ struct AppDialog: View {
 // MARK: - Preview
 #Preview {
     VStack {
+        Text("App Dialog View")
+            .fontStyle(.extraTitle)
+            .foregroundColor(color: .textStrong)
+            .padding()
+        
         AppButton(title: "title only") {
             UIApplication.showDialog { dismiss in
                 AppDialog(

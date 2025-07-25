@@ -11,6 +11,11 @@ struct AppColorPreView: View {
     var body: some View {
         ScrollView {
             VStack {
+                Text("App Color View")
+                    .fontStyle(.extraTitle)
+                    .foregroundColor(color: .textStrong)
+                    .padding()
+                    
                 ForEach(AppColor.allCases, id: \.self) { color in
                     Text("\(color)")
                         .fontStyle(.subtitle1)
