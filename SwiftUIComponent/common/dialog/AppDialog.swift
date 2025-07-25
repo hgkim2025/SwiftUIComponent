@@ -96,7 +96,7 @@ struct AppDialog: View {
                     ),
                     dismiss: dismiss
                 )
-            } // Dialog
+            } // : Dialog
         } // : BTN
         
         AppButton(title: "content only") {
@@ -109,7 +109,7 @@ struct AppDialog: View {
                     ),
                     dismiss: dismiss
                 )
-            } // Dialog
+            } // : Dialog
         } // : BTN
         
         AppButton(title: "title and content") {
@@ -123,7 +123,7 @@ struct AppDialog: View {
                     ),
                     dismiss: dismiss
                 )
-            } // Dialog
+            } // : Dialog
         } // : BTN
         
         AppButton(title: "all") {
@@ -139,7 +139,7 @@ struct AppDialog: View {
                     ),
                     dismiss: dismiss
                 )
-            } // Dialog
+            } // : Dialog
         } // : BTN
     } // : VS
     .padding(64)
