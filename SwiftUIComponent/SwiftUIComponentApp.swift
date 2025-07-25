@@ -9,6 +9,11 @@ import SwiftUI
 
 @main
 struct SwiftUIComponentApp: App {
+    
+    init() {
+        UIApplication.startKeyboardObserver()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
