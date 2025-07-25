@@ -61,7 +61,7 @@
 
 ## Button 공통화
 > Button 에 동작이 동일하고 크기, 컬러, 종류가 다를 때 공통화한 버튼입니다. 여러 화면을 개발해야 되는 상황에 자주 사용되는 버튼을 공통화 했을 때 개발 속도 향상 및 디버깅에 용의하여 공통화를 선호하는 편입니다.
-- How to Use
+- How to use
   ``` swift
   ScrollView (showsIndicators: false) {
       VStack(alignment: .leading, spacing: spacing) {
@@ -116,14 +116,14 @@
 
 ## Color 공통화
 > Design 에 Color 들이 정해져있고 이를 반복되어 사용해야 하는 경우에 아래와 같이 공통화할 수 있습니다.
-- How to Use SwiftUI
+- How to use SwiftUI
   ``` swift
   view
     .foregroundColor(color: .primaryNormal)
     .background(color: .primaryAlternative)
   ```
   <br>
-- How to Use UIKit
+- How to use UIKit
 
   ``` swift
   let messageLabel = UILabel()
