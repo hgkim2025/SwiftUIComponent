@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ToastPreview: View {
+struct AppToastPreview: View {
     var body: some View {
         VStack {
             Text("App Toast View")
@@ -33,5 +33,5 @@ struct ToastPreview: View {
 }
 
 #Preview {
-    ToastPreview()
+    AppToastPreview()
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AppColorPreView: View {
+struct AppColorPreview: View {
     var body: some View {
         ScrollView {
             VStack {
@@ -31,5 +31,5 @@ struct AppColorPreView: View {
 }
 
 #Preview {
-    AppColorPreView()
+    AppColorPreview()
 }

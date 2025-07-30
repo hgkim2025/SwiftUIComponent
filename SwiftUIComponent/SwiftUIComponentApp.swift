@@ -10,6 +10,8 @@ import SwiftUI
 @main
 struct SwiftUIComponentApp: App {
     
+    @StateObject var navigationObject = NavigationObject.shared
+    
     init() {
         UIApplication.startKeyboardObserver()
     }
@@ -17,6 +19,7 @@ struct SwiftUIComponentApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(navigationObject)
         }
     }
 }

@@ -18,6 +18,7 @@ enum Tag: Int {
     case MESSAGE
     case GROUP
     case NOTIFY
+    case ROUTER
     
     // MARK: - 하위 태그
     case ID
