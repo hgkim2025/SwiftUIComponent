@@ -158,4 +158,62 @@
   🟢 [DEBUG] [CALL][NAME][URI] [ContentView.swift]:25 [body]: - message
   ```
 
-  ![LogFilter](SwiftUIComponent/res/image/logFilterImage.png)
+<br>
+
+## Routing
+> SwiftUI 에서 가장 일반적인 예제로 Routing 하는 방식이 `Bool` 상태 변수를 통해 `isPresented` 하는 방식입니다.
+> 이 방식을 채택하게되면 `Navigation Stack` 과 관련된 모든 화면 코드에 `Bool` 상태 변수를 관리하게 됩니다.
+> 이를 개선하기 위해 Routing 하기 위한 `NavigationObject` 를 개발 했습니다.
+> 이 방식은 iOS 16 부터 지원합니다.
+
+- How to  register
+  ``` swift
+  @EnvironmentObject var navigationObject: NavigationObject
+  
+  var body: some View {
+      NavigationStack(path: $navigationObject.path) {
+          VStack(spacing: spacing) {
+              // add View
+          }
+          // routes to a view
+          .navigationDestination(for: String.self) { value in
+              if let navigationStackType = NavigationStackType(rawValue: value) {
+                  switch navigationStackType {
+                  case .dialog:
+                      AppDialogPreview()
+                  case .toast:
+                      AppToastPreview()
+                  case .button:
+                      AppButtonPreview()
+                  case .color:
+                      AppColorPreview()
+                  case .fontStyle:
+                      AppFontStylePreview()
+                  }
+              } else {
+                  ...
+              }
+          }
+      }
+  }
+  ```
+- How to use 
+  ``` swift
+  @EnvironmentObject var navigationObject: NavigationObject
+  
+  // push
+  AppButton(title: "Push Button Stack") {
+      navigationObject.push(.button)
+  }
+  
+  // pop
+  AppButton(title: "Pop Stack") {
+      navigationObject.pop()
+  }
+  
+  // popTo - UIKit 에서 popToViewController(targetVC) 의 동작과 동일하게 구현했습니다.
+  AppButton(title: "Pop to Button Stack") {
+      navigationObject.popTo(.button)
+  }
+  ```
+<br>
