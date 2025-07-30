@@ -23,11 +23,12 @@
 <br>
 
 ## Dialog 공통화
-> SwiftUI 에서 가장 일반적인 예제로 Dialog 를 보여주는 형태가 Bool 상태 변수를 이용해여 보여주는 방식입니다.
+> SwiftUI 에서 가장 일반적인 예제로 Dialog 를 보여주는 형태가 `Bool` 상태 변수를 이용해여 보여주는 방식입니다.
 > 과거에 이 방식을 채택하여 `@EnvironmentObject` 를 활용해 공통화를 하고 사용하기 편하게 개발했습니다.
 > 그런데 이도 역시 Dialog 를 띄우는 화면에 `@EnvironmentObject` 를 세팅하는 코드가 들어가야 했습니다.
-> 이를 해결하기 위해 UIKit 방식의 Dialog 로 적용하면 좋겠다는 아이디어가 떠올라 적용하게되었습니다.
-> 이렇게 하면 별다른 사전 코드 없이 `UIApplication.showDialog{...}` 를 통해 바로 Dialog 를 출력할 수 있습니다.
+> 이를 해결하기 위해 "Dialog 를 보여주는 방식만 UIKit 으로 적용하고 UI 는 SwiftUI 로 개발하면 어떨까?" 라는 생각으로 만들었습니다.
+> 이렇게 하면 `UIApplication.showDialog{...}` UIKit 코드에 SwiftUI Dialog 를 할당해서 출력 할 수 있습니다.
+> 또 Dialog 를 출력할 때 `Bool` 상태 변수, `@EnvironmentObject` 와 같은 상태관리 코드를 사용하지 않고 독립적으로 출력할 수 있습니다.
 
 - How to use
   ``` swift
