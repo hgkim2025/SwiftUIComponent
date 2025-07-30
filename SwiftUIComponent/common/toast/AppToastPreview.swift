@@ -15,19 +15,10 @@ struct AppToastPreview: View {
                 .foregroundColor(color: .textStrong)
                 .padding()
             
-            Button {
+            AppButton(title: "Show Taost") {
                 UIApplication.makeToast("Hello, World!")
-            } label: {
-                
-                RoundedRectangle(cornerRadius: 16)
-                    .fill(color: .primaryNormal)
-                    .frame(width: 200, height: 100)
-                    .overlay {
-                        Text("Show Taost")
-                            .fontStyle(.title1)
-                            .foregroundColor(color: .textWhite)
-                    }
             } // : BTN
+            .padding(.horizontal, 64)
         } // : VS
     }
 }
