@@ -97,7 +97,7 @@ struct AppButton: View {
                         .padding(lineWidth)
                 } // : ZS
             } // : OVERLAY
-            .contentShape(Rectangle())
+            .contentShape(RoundedRectangle(cornerRadius: size.radius))
         // MARK: - Gesture
             .gesture(
                 DragGesture(minimumDistance: 0)
