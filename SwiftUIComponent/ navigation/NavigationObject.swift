@@ -22,7 +22,7 @@ class NavigationObject: ObservableObject {
     @Published var path = NavigationPath()
     
     @MainActor
-    func clear() {
+    func popToRoot() {
         path.removeLast(path.count)
     }
     
@@ -35,11 +35,11 @@ class NavigationObject: ObservableObject {
         path.removeLast()
     }
     
-    func removePaths(upto type: NavigationStackType) {
-        removePaths(upto: type.rawValue)
+    func popTo(_ type: NavigationStackType) {
+        popToRawValue(type.rawValue)
     }
     
-    func removePaths(upto target: String) {
+    private func popToRawValue(_ target: String) {
         if let codable = path.codable {
             
             do {
