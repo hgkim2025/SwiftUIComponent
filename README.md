@@ -22,9 +22,9 @@
 </table>
 <br>
 
-## Dialog 공통화
+## Dialog Component
 > SwiftUI 에서 가장 일반적인 예제로 Dialog 를 보여주는 형태가 `Bool` 상태 변수를 이용해여 보여주는 방식입니다.
-> 과거에 이 방식을 채택하여 `@EnvironmentObject` 를 활용해 공통화를 하고 사용하기 편하게 개발했습니다.
+> 과거에 이 방식을 채택하여 `@EnvironmentObject` 를 활용해 컴포넌트로 개발했었습니다.
 > 그런데 이도 역시 Dialog 를 띄우는 화면에 `@EnvironmentObject` 를 세팅하는 코드가 들어가야 했습니다.
 > 이를 해결하기 위해 "Dialog 를 보여주는 방식만 UIKit 으로 적용하고 UI 는 SwiftUI 로 개발하면 어떨까?" 라는 생각으로 만들었습니다.
 > 이렇게 하면 `UIApplication.showDialog{...}` UIKit 코드에 SwiftUI Dialog 를 할당해서 출력 할 수 있습니다.
@@ -60,8 +60,8 @@
 
 <br>
 
-## Button 공통화
-> Button 에 동작이 동일하고 크기, 컬러, 종류가 다를 때 공통화한 버튼입니다. 여러 화면을 개발해야 되는 상황에 자주 사용되는 버튼을 공통화 했을 때 개발 속도 향상 및 디버깅에 용의하여 공통화를 선호하는 편입니다.
+## Button Component
+> Button 에 동작이 동일하고 크기, 컬러, 종류가 다를 때 공통으로 사용하기 위해 컴포넌트로 만들었습니다. 자주 사용되는 버튼을 컴포넌트로 만들어 개발 속도 향상 및 유지보수가 개선되었습니다.
 - How to use
   ``` swift
   ScrollView (showsIndicators: false) {
@@ -104,8 +104,8 @@
 
 <br>
 
-## Font 공통화
-> Design 에 Font Size, Pretendard, Line Height, Letter Spacing 가 정해져있고 이를 반복적으로 사용해야 하는 경우에 아래와 같이 공통화할 수 있습니다.
+## Font Component
+> Design 에 Font Size, Pretendard, Line Height, Letter Spacing 가 정해져있고 이를 반복적으로 사용해야 하는 경우에 아래와 같이 컴포넌트로 만들 수 있습니다.
 - How to use
   ``` swift
   Text("title")
@@ -115,8 +115,8 @@
 
 <br>
 
-## Color 공통화
-> Design 에 Color 들이 정해져있고 이를 반복되어 사용해야 하는 경우에 아래와 같이 공통화할 수 있습니다.
+## Color Component
+> Design 에 Color 들이 정해져있고 이를 반복되어 사용해야 하는 경우에 아래와 같이 컴포넌트로 만들 수 있습니다.
 - How to use SwiftUI
   ``` swift
   view
@@ -134,7 +134,7 @@
 
 <br>
 
-## Log 공통화
+## Log Component
 > 멀티쓰레드 환경에서 Log 를 기반으로 디버깅할 때 직관적이고 작업속도가 빨랐습니다.
 > 여기서 Log 에 Tag 를 붙여 원하는 Tag 의 Log 만 필터해서 볼 수 있도록 개선했습니다.
 
