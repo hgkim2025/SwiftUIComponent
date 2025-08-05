@@ -23,7 +23,7 @@
 <br>
 
 ## Dialog Component
-> SwiftUI 에서 가장 일반적인 예제로 Dialog 를 보여주는 형태가 `Bool` 상태 변수를 이용해여 보여주는 방식입니다.
+> SwiftUI 에서 가장 일반적인 예제로 Dialog 를 보여주는 형태가 `Bool` 상태 변수를 이용하여 보여주는 방식입니다.
 > 과거에 이 방식을 채택하여 `@EnvironmentObject` 를 활용해 컴포넌트로 개발했었습니다.
 > 그런데 이도 역시 Dialog 를 띄우는 화면에 `@EnvironmentObject` 를 세팅하는 코드가 들어가야 했습니다.
 > 이를 해결하기 위해 "Dialog 를 보여주는 방식만 UIKit 으로 적용하고 UI 는 SwiftUI 로 개발하면 어떨까?" 라는 생각으로 만들었습니다.
@@ -48,10 +48,10 @@
 <br>
 
 ## Toast 활용
-> SwiftUI 로 개발할 떄 `Preview` 에서 이벤트 발생 시 바로 확인하기가 어려웠습니다.
-> 그렇다고 그 때마다 새로운 UI 로 디버깅하는 방법도 한계가 있다고 생각했습니다.
+> SwiftUI 로 개발할 때 `Preview` 에서 이벤트 발생 시 바로 확인하기가 어려웠습니다.
+> 그렇다고 그 때마다 새로운 UI 로 디버깅하는 방법도 한계가 있었습니다.
 > 이를 해결하기 위해서 Toast 를 개발하게 되었습니다.
-> `Preview` 에서 이벤트 발생여부를 확인하기 위해 `UIApplication.makeToast(message)` 를 활용합니다.
+> `Preview` 에서 이벤트 발생 여부를 확인하기 위해 `UIApplication.makeToast(message)` 를 활용합니다.
 
 - How to use
   ``` swift
@@ -105,7 +105,7 @@
 <br>
 
 ## Font Component
-> Design 에 Font Size, Pretendard, Line Height, Letter Spacing 가 정해져있고 이를 반복적으로 사용해야 하는 경우에 아래와 같이 컴포넌트로 만들 수 있습니다.
+> Design 에 Font Size, Pretendard, Line Height, Letter Spacing 가 정해져있고 이를 반복해서 사용해야 하는 경우에 아래와 같이 컴포넌트로 만들 수 있습니다.
 - How to use
   ``` swift
   Text("title")
@@ -116,7 +116,7 @@
 <br>
 
 ## Color Component
-> Design 에 Color 들이 정해져있고 이를 반복되어 사용해야 하는 경우에 아래와 같이 컴포넌트로 만들 수 있습니다.
+> Design 에 Color 들이 정해져있고 이를 반복해서 사용해야 하는 경우에 아래와 같이 컴포넌트로 만들 수 있습니다.
 - How to use SwiftUI
   ``` swift
   view
@@ -162,11 +162,11 @@
 
 ## Routing
 > SwiftUI 에서 가장 일반적인 예제로 Routing 하는 방식이 `Bool` 상태 변수를 통해 `isPresented` 하는 방식입니다.
-> 이 방식을 채택하게되면 `Navigation Stack` 과 관련된 모든 화면 코드에 `Bool` 상태 변수를 관리하게 됩니다.
-> 이를 개선하기 위해 Routing 하기 위한 `NavigationObject` 를 개발 했습니다.
+> 이 방식을 채택하게 되면 `Navigation Stack` 과 관련된 모든 화면 코드에 `Bool` 상태 변수를 관리하게 됩니다.
+> 이를 개선하기 위해 Routing 하기 위한 `NavigationObject` 를 개발했습니다.
 > 이 방식은 iOS 16 부터 지원합니다.
 
-- How to  register
+- How to register
   ``` swift
   @EnvironmentObject var navigationObject: NavigationObject
   
