@@ -32,11 +32,15 @@ class NavigationObject: ObservableObject {
     }
     
     func pop() {
-        path.removeLast()
+        if path.count > 0 {
+            path.removeLast()
+        }
     }
     
     func popTo(_ type: NavigationStackType) {
-        popToRawValue(type.rawValue)
+        if path.count > 0 {
+            popToRawValue(type.rawValue)
+        }
     }
     
     private func popToRawValue(_ target: String) {
